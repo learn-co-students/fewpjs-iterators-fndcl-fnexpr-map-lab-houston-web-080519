@@ -12,5 +12,17 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map( tutorial => {
+    // So you first take each string and break it up
+    let tokens = tutorial.split(' ')
+    // Then you iterate through each string broken up into array pieces...
+    let capitalizedTokens =
+      tokens.map( token => token.charAt(0).toUpperCase() + token.slice(1) )
+      debugger
+      // Then join rejoins the broken apart array of capitalized words
+    let response = capitalizedTokens.join(' ')
+    return response
+  })
 }
+
+console.log(titleCased())
